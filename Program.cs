@@ -11,7 +11,7 @@ namespace Conflict
         private static string serverConnectionString = $"Data Source=(localdb)\\mssqllocaldb; Initial Catalog=AdventureWorks;Integrated Security=true;";
         private static string clientConnectionString = $"Data Source=(localdb)\\mssqllocaldb; Initial Catalog=Client;Integrated Security=true;";
 
-        private static async Task Main() => await ConflictAsync().ConfigureAwait(false);
+        //private static async Task Main() => await ConflictAsync().ConfigureAwait(false);
 
         private static async Task ConflictAsync()
         {
@@ -22,7 +22,7 @@ namespace Conflict
 
             // Second provider is using plain old Sql Server provider, relying on triggers and tracking tables to create the sync environment
             var clientProvider = new SqlSyncProvider(clientConnectionString);
-
+            
             // Tables involved in the sync process:
             var tables = new string[]
             {
